@@ -2,7 +2,7 @@ import { BaseNode, PreviewNode, Util } from "./Base.js";
 
 
 class FloatNode extends BaseNode{
-	constructor(id, x, y, defaultValue = null){
+	constructor(id, x, y, defaultValue = "1.0"){
 		super(id,x,y,90);
 		this.setHeader("Float",true)
 			.addOutput("F")

@@ -1,4 +1,5 @@
 import Sage from "./sage/Sage.js";
+import Menu from "./sage/Menu.js";
 import EMan from "./EditorManager.js";
 import { Connection, IConnector, OConnector } from "./Connections.js";
 
@@ -51,6 +52,11 @@ class NodeBox{
 				e.pageX - rect.left,
 				e.pageY - rect.top,
 				bindOnNodeDragging );
+		});
+
+		Sage.elmEvt(this.ui.container,"contextmenu", (e)=>{
+			Sage.evtHandled(e);
+			Menu.hideMenu();
 		});
 	}
 

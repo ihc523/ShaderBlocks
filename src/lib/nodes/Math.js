@@ -2,7 +2,7 @@ import { BaseNode, PreviewNode, Util } from "./Base.js";
 
 
 class MultiplyNode extends BaseNode{
-	constructor(id, x, y, defaultValue = null){
+	constructor(id, x, y, defaultValue = "20.0"){
 		super(id,x,y,90);
 		this.setHeader("Multiple",true)
 			.addOutput("O")
