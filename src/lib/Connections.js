@@ -40,7 +40,7 @@ function MoveConn_End(e){
 }
 
 //Set the position of the curve with the control points at an even position on the x pos
-function IO_Curve_Line(elm,x1,y1,x2,y2,scale){
+function IO_Curve_Line(elm,x1,y1,x2,y2,scale=1.5){
 	var d = Math.abs(x1-x2) / scale,	//Delta X times scale factor 9
 	str = "M" + x1	+ "," + y1 + " C" +	//MoveTo
 		(x1 + d)	+ "," + y1 + " " +	//First Control Point
@@ -51,6 +51,8 @@ function IO_Curve_Line(elm,x1,y1,x2,y2,scale){
 
 //Create a line when IOs are pointing away from each other which creates two arcs
 function IO_DoubleArc_Line(elm,x1,y1,x2,y2){
+	return IO_Curve_Line.apply(null, arguments);
+
 	var dy	= (y2-y1),						// Y Distance
 		c	= Math.abs(Math.floor(dy / 3)),	// Third of distance works well to create half circle curve
 		my	= (dy * 0.5) + y1;				// Mid Y point to draw straight line
